@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Image recognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <center>
+            <h1 class="btn btn-default heading">Image Recognition</h1>
+            <br><br>
+            <span>
+                <h2 class ="btn btn-success">NOTE :</h2>
+                <h2 class = "btn btn-success">You can also choose your grandfather or grandson</h2>
+            </span>
+            <p style="font-size: 22px;">Model is trained to identify the following people: </p>
+            <b class="name_of_objects">
+                <h3 class="btn btn-danger">Reyansh Khaitan (grandson)</h3>
+                <hr>
+                <h3 class="btn btn-danger">Mahendra Khaitan (Grandfather)</h3>
+                <hr>
+            </b>
+            <label>Webcam View - </label>
+            <div id="camera"></div>
+            <br><br>
+            <div id="result"></div>
+            <br><br>
+            <button onclick="take_snapshot()" class="btn btn-warning">Capture Image</button>
+            <br><br>
+            <button onclick="check()" class="btn btn-success">Identify Image</button>
+            <br><br>
+
+            <p><b style="font-size: 22px; color:black">Person :<span id="result_person_name"></span> </b></p>
+            <p><b style="font-size: 22px; color:black">Accuracy : <span id="result_accuracy_value"></span></b></p>
+        </center>
+
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
