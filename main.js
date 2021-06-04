@@ -15,6 +15,34 @@ function take_snapshot() {
     });
 }
 
-console.log('m15 version:',m15.version);
+console.log('ml5 version:',ml5.version);
 
-classifier = m15.imageClassifier('https://teachablemachine.withgoogle.com/models/EituAmuEZ/', modelloaded)
+
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/EituAmuEZ/model.json',modelLoaded);
+
+  function modelLoaded() {
+    console.log('Model Loaded!');
+  }
+      
+  function check()
+  {
+    console.log("in the check function");
+    img = document.getElementById('captured_image');
+    classifier.classify(img, gotResult);
+  }
+
+
+// A function to run when we get any errors and the results
+function gotResult(error, results) {
+  
+   console.log("inside got result function");
+
+  if (error) {
+    console.error(error);
+  } else {
+    // The results are in an array ordered by confidence.
+    console.log(results);
+    document.getElementById("result_person_name").innerHTML = results[0].label;
+    document.getElementById("result_accuracy_value").innerHTML = results[0].confidence.toFixed(3);
+  }
+}
